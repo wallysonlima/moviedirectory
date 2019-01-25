@@ -11,10 +11,10 @@ public class Prefs {
     }
 
     public void setSearch(String search) {
-        sharedPreferences.edit().putString("search", search).commit();
+        sharedPreferences.edit().putString("Search", search).commit();
     }
 
     public String getSearch() {
-        return sharedPreferences.getString("search", "Batman");
+        return sharedPreferences.getString("Search", "Batman");
     }
 }

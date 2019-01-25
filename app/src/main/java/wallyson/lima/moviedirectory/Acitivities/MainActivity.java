@@ -63,7 +63,12 @@ public class MainActivity extends AppCompatActivity {
 
         Prefs prefs = new Prefs(MainActivity.this);
         String search = prefs.getSearch();
-        getMovies(search);
+        // getMovies(search);
+        movieList = getMovies(search);
+
+        movieRecyclerViewAdapter = new MovieRecyclerViewAdapter(this, movieList);
+        recyclerView.setAdapter(movieRecyclerViewAdapter);
+        movieRecyclerViewAdapter.notifyDataSetChanged();
     }
 
     // Get movies
@@ -89,7 +94,11 @@ public class MainActivity extends AppCompatActivity {
                         movie.setImdbId(movieObj.getString("imdbID"));
 
                         Log.d("Movies: ", movie.getTitle());
+
+                        movieList.add(movie);
                     }
+
+                    movieRecyclerViewAdapter.notifyDataSetChanged();
 
                 } catch(JSONException e) {
                     e.printStackTrace();
