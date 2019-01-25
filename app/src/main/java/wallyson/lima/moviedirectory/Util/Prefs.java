@@ -11,7 +11,7 @@ public class Prefs {
     }
 
     public void setSearch(String search) {
-        sharedPreferences.edit().putString("Search", search).commit();
+        sharedPreferences.edit().putString("search", search).commit();
     }
 
     public String getSearch() {

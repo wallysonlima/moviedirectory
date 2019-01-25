@@ -2,7 +2,6 @@ package wallyson.lima.moviedirectory.Acitivities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -76,14 +75,14 @@ public class MainActivity extends AppCompatActivity {
         movieList.clear();
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                Constants.URL_LEFT + searchTerm + Constants.URL_RIGHT, new Response.Listener<JSONObject>() {
+                Constants.URL_LEFT + searchTerm, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    JSONArray movieArray = response.getJSONArray("Search");
+                    JSONArray moviesArray = response.getJSONArray("Search");
 
-                    for(int i = 0; i < movieArray.length(); i++) {
-                        JSONObject movieObj = movieArray.getJSONObject(i);
+                    for(int i = 0; i < moviesArray.length(); i++) {
+                        JSONObject movieObj = moviesArray.getJSONObject(i);
 
                         Movie movie = new Movie();
 

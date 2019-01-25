@@ -42,7 +42,7 @@ public class MovieRecyclerViewAdapter extends RecyclerView.Adapter<MovieRecycler
         holder.title.setText(movie.getTitle());
         holder.type.setText(movie.getMovieType());
 
-        Picasso.get()
+        Picasso.with(context)
                 .load(posterLink)
                 .placeholder(android.R.drawable.ic_btn_speak_now)
                 .into(holder.poster);
