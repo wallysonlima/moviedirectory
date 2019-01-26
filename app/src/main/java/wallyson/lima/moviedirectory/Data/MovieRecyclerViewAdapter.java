@@ -1,6 +1,7 @@
 package wallyson.lima.moviedirectory.Data;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import wallyson.lima.moviedirectory.Acitivities.MovieDetailActivity;
 import wallyson.lima.moviedirectory.Model.Movie;
 import wallyson.lima.moviedirectory.R;
 
@@ -64,7 +66,7 @@ public class MovieRecyclerViewAdapter extends RecyclerView.Adapter<MovieRecycler
 
         }
 
-        public ViewHolder(@NonNull View itemView, Context ctx) {
+        public ViewHolder(@NonNull View itemView, final Context ctx) {
             super(itemView);
             context = ctx;
 
@@ -76,7 +78,10 @@ public class MovieRecyclerViewAdapter extends RecyclerView.Adapter<MovieRecycler
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "Row Tapped !", Toast.LENGTH_LONG).show();
+                    Movie movie = movieList.get(getAdapterPosition());
+                    Intent intent = new Intent(context, MovieDetailActivity.class);
+                    intent.putExtra("movie", movie);
+                    ctx.startActivity(intent);
                 }
             });
         }
