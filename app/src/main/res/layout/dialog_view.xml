@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:padding="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
+                android:text="New Search Term"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/searchEdt"
+                android:layout_below="@id/titleText"
+                android:textStyle="italic"
+                android:hint="E.g:Batman"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_below="@id/searchEdt"
+                android:text="Submit"
+                android:textColor="@android:color/white"
+                android:background="@color/colorAccent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>
