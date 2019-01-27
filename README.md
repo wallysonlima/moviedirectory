@@ -11,6 +11,7 @@
   <li>Volley</li>
   <li>Picasso</li>
   <li>XML</li>
+  <li>OMDB API</li>
 </ul>
 
 <hr>
